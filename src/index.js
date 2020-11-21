@@ -111,26 +111,32 @@ let groupedByActorBondFilms = [];
 for(let i = 0; i < allBondFilms.length; i++) {
 
   // find group in groupedByActorBondFilms with actor the same as allBondFilms[i].actor
-  const existingGroup = groupedByActorBondFilms.find(function(film) { return film.actor === allBondFilms[i].actor });
+  const existingGroup = groupedByActorBondFilms.find(function(group) { return group.actor === allBondFilms[i].actor });
 
-  // if group exists then push allBondFilms[i] into the existingGroup.films array
-  if (existingGroup !== undefined) {
-    existingGroup.films.push(allBondFilms[i]);
-  } else {
-    // otherwise create a newGroup object with the actor name and a films array containing the current allBondFilms[i]
+  // if group does not exist  
+  if (existingGroup === undefined) {
+
+    // create a newGroup object with the actor name and a films array containing the current allBondFilms[i]
     const newGroup = {
       actor: allBondFilms[i].actor,
       films: [
         allBondFilms[i]
       ]  
     };
+
     // add newGroup to groupedByActorBondFilms 
     groupedByActorBondFilms.push(newGroup);
+
+  } else { // otherwise group exists so...
+
+    // add allBondFilms[i] to the existingGroup.films array
+    existingGroup.films.push(allBondFilms[i]);
+
   }
 }
 
 // Sort groupedByActorBondFilms in ascending order by number of films
-groupedByActorBondFilms.sort(function(leftGroup, rightGroup) { return leftGroup.films.length - rightGroup.films.length; });
+groupedByActorBondFilms.sort(function (leftGroup, rightGroup) { return leftGroup.films.length - rightGroup.films.length; });
 
 
 

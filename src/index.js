@@ -104,7 +104,7 @@ const allBondFilms = [
   },
 ];
 
-// array containing bond films grouped by actor
+// create empty array containing bond films grouped by actor
 let groupedByActorBondFilms = [];
 
 // loop through all bond films

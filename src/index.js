@@ -104,8 +104,8 @@ const allBondFilms = [
   },
 ];
 
-// create empty array containing bond films grouped by actor
-let groupedByActorBondFilms = [];
+// create empty array to hold Bond films grouped by actor
+const groupedByActorBondFilms = [];
 
 // loop through all bond films
 for(let i = 0; i < allBondFilms.length; i++) {
@@ -140,7 +140,7 @@ groupedByActorBondFilms.sort(function (leftGroup, rightGroup) { return leftGroup
 
 
 
-// CODE to display result on page
+// IGNORE FOLLOWING CODE - used to display result on resulting HTML page
 const body = document.getElementsByTagName('body')[0];
 const pre = document.createElement('pre');
 const code = document.createElement('code');

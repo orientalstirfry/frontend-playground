@@ -113,7 +113,7 @@ for(let i = 0; i < allBondFilms.length; i++) {
   // find group in groupedByActorBondFilms with actor the same as allBondFilms[i].actor
   const existingGroup = groupedByActorBondFilms.find(function(group) { return group.actor === allBondFilms[i].actor });
 
-  // if group does not exist  
+  // if group does not exist in groupedByActorBondFilms
   if (existingGroup === undefined) {
 
     // create a newGroup object with the actor name and a films array containing the current allBondFilms[i]
